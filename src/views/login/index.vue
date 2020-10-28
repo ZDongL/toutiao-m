@@ -1,7 +1,9 @@
 <template>
   <div class="login-container">
     <!-- 导航栏 -->
-    <van-nav-bar title="登录" class="page-nav-bar"> </van-nav-bar>
+    <van-nav-bar title="登录" class="page-nav-bar">
+      <van-icon slot="left" name="arrow-left" @click="$router.back()"></van-icon>
+    </van-nav-bar>
 
     <!-- 登录表单 -->
     <van-form @submit="onSubmit" ref="loginFrom">
@@ -68,7 +70,7 @@ export default {
 
         // 登录成功，跳转回原来页面
         // back 的方式不严谨，后面讲功能优化的时候再说
-        this.$router.back()
+        this.$router.push('/home')
       } catch (err) {
         if (err.response.status === 400) {
           this.$toast.fail('手机号或验证码错误')
@@ -114,10 +116,11 @@ export default {
   }
 
   .send-sms-btn {
-    width: 156px;
+    width: 168px;
     height: 46px;
     line-height: 46px;
     background-color: #ededed;
+    font-size: 20px;
     color: #666;
   }
   .login-btn-warp {

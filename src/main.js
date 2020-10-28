@@ -10,6 +10,8 @@ import Vant from 'vant'
 import 'vant/lib/index.css'
 // 导入rem适配 包
 import 'amfe-flexible'
+// 导入dayjs 时间插件
+import './utils/dayjs'
 
 Vue.use(Vant)
 
