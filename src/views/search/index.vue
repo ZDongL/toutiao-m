@@ -24,7 +24,9 @@
 
     <!-- 搜索历史 -->
     <search-history v-else
-                    :searchHistory="searchHistory"></search-history>
+                    :searchHistory="searchHistory"
+                    @search="onSearch"
+                    @claer-searchhistory="searchHistory = []"></search-history>
 
   </div>
 </template>
@@ -33,12 +35,13 @@
 import searchHistory from './components/search-history'
 import searchSuggestion from './components/search-suggestion'
 import searchResult from './components/search-result'
+import { setItem, getItem } from '../../utils/storage'
 export default {
   data () {
     return {
       searchText: '',
       isResultShow: false, // 控制搜索结果的展示
-      searchHistory: []
+      searchHistory: getItem('TOUTIAO_SEARCH_HISTORY') || []
     }
   },
   components: {
@@ -59,6 +62,11 @@ export default {
     },
     onCancel () {
       this.$router.push('/home')
+    }
+  },
+  watch: {
+    searchHistory (val) {
+      setItem('TOUTIAO_SEARCH_HISTORY', val)
     }
   }
 }
