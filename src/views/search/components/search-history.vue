@@ -23,6 +23,14 @@
 <script>
 export default {
   props: {
+    // Prop 数据
+    //  Prop 是受父组件数据影响的
+    //    如果是普通数据（数字、字符串、布尔值）绝对不能修改
+    //    即便改了也不会传导给父组件
+    //
+    //    如果是引用类型数据（数组、对象）
+    //        可以修改，例如 [].push(xxx)，对象.xxx = xxx
+    //        不能重新赋值, xxx = []
     searchHistory: {
       type: Array,
       required: true
@@ -30,16 +38,16 @@ export default {
   },
   data () {
     return {
-      isDeleteShow: false
+      isDeleteShow: false // 控制删除显示状态
     }
   },
   methods: {
     onSearchItemClick (item, i) {
       if (this.isDeleteShow) {
         this.searchHistory.splice(i, 1)
-        // 删除状态
+        // 删除状态，删除历史记录数据
       } else {
-        // 搜索状态
+        // 非删除状态，直接进入搜索
         this.$emit('search', item)
       }
     }

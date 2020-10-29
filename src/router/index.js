@@ -17,7 +17,14 @@ const routes = [
       { path: '/my', component: () => import('@/views/my') }
     ]
   },
-  { path: '/search', component: () => import('@/views/search') }
+  { path: '/search', component: () => import('@/views/search') },
+  {
+    path: '/article/:articleId',
+    component: () => import('@/views/article'),
+    // 向该（article）组件传参  把动态的 :articleId 传过去  接收拿props接收
+    props: true
+  }
+
 ]
 
 const router = new VueRouter({
