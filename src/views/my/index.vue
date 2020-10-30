@@ -2,14 +2,19 @@
   <div class="my-container">
 
     <!-- 已登录头部 -->
-    <div class="header user-info" v-if="user">
+    <div class="header user-info"
+         v-if="user">
       <div class="base-info">
         <div class="left">
-          <van-image class="avatar" round fit="cover" :src="userInfo.photo" />
+          <van-image class="avatar"
+                     round
+                     fit="cover"
+                     :src="userInfo.photo" />
           <span class="uname">{{userInfo.name}}</span>
         </div>
         <div class="right">
-          <van-button size="mini" round>编辑资料</van-button>
+          <van-button size="mini"
+                      round>编辑资料</van-button>
         </div>
       </div>
       <div class="data-stats">
@@ -33,29 +38,45 @@
     </div>
 
     <!-- 未登录头部 -->
-    <div class="header not-login" v-else>
-      <div class="login-btn" @click="$router.push('/login')">
-        <img class="login-img" src="../../assets/mobile.png" alt="">
+    <div class="header not-login"
+         v-else>
+      <div class="login-btn"
+           @click="$router.push('/login')">
+        <img class="login-img"
+             src="../../assets/mobile.png"
+             alt="">
         <span class="text">登录 / 注册</span>
       </div>
     </div>
 
     <!-- 宫格导航 -->
-    <van-grid :column-num="2" class="grid-nav" clickable>
+    <van-grid :column-num="2"
+              class="grid-nav"
+              clickable>
       <van-grid-item class="grid-item">
-        <i slot="icon" class="iconfont iconshoucang"></i>
-        <span slot="text" class="text">收 藏</span>
+        <i slot="icon"
+           class="iconfont iconshoucang"></i>
+        <span slot="text"
+              class="text">收 藏</span>
       </van-grid-item>
       <van-grid-item class="grid-item">
-        <i slot="icon" class="iconfont iconlishi"></i>
-        <span slot="text" class="text">历 史</span>
+        <i slot="icon"
+           class="iconfont iconlishi"></i>
+        <span slot="text"
+              class="text">历 史</span>
       </van-grid-item>
     </van-grid>
 
-    <van-cell title="消息通知" is-link />
-    <van-cell title="小智同学" is-link />
+    <van-cell title="消息通知"
+              is-link />
+    <van-cell title="小智同学"
+              is-link />
 
-    <van-button type="default" size="large" class="out-login-btn" v-if="user" @click="outLogin">退出登录</van-button>
+    <van-button type="default"
+                size="large"
+                class="out-login-btn"
+                v-if="user"
+                @click="outLogin">退出登录</van-button>
   </div>
 </template>
 
@@ -98,7 +119,7 @@ export default {
         this.userInfo = data.data
         // console.log(data)
       } catch (err) {
-        console.log('数据请求失败，请稍后重试')
+        // console.log('数据请求失败，请稍后重试')
       }
     }
   }

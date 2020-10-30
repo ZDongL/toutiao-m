@@ -10,7 +10,6 @@ const request = axios.create({
     try {
       return JSONBig.parse(data)
     } catch (err) {
-      // this.$toast('数据加载失败，请稍后重试')
       return data
     }
 
