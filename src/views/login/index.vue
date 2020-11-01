@@ -1,24 +1,53 @@
 <template>
   <div class="login-container">
     <!-- 导航栏 -->
-    <van-nav-bar title="登录" class="page-nav-bar">
-      <van-icon slot="left" name="arrow-left" @click="$router.back()"></van-icon>
+    <van-nav-bar title="登录"
+                 class="page-nav-bar">
+      <van-icon slot="left"
+                name="arrow-left"
+                @click="$router.back()"></van-icon>
     </van-nav-bar>
 
     <!-- 登录表单 -->
-    <van-form @submit="onSubmit" ref="loginFrom">
-      <van-field v-model="user.mobile" name="mobile" placeholder="请输入手机号" :rules="userFromRules.mobile" type="number" maxlength="11">
-        <i slot="left-icon" class="iconfont iconshouji"></i>
+    <van-form @submit="onSubmit"
+              ref="loginFrom">
+      <van-field v-model="user.mobile"
+                 name="mobile"
+                 placeholder="请输入手机号"
+                 :rules="userFromRules.mobile"
+                 type="number"
+                 maxlength="11">
+        <i slot="left-icon"
+           class="iconfont iconshouji"></i>
       </van-field>
-      <van-field v-model="user.code" name="code" placeholder="请输入验证码" :rules="userFromRules.code" type="number" maxlength="6">
-        <i slot="left-icon" class="iconfont iconyanzhengma"></i>
+      <van-field v-model="user.code"
+                 name="code"
+                 placeholder="请输入验证码"
+                 :rules="userFromRules.code"
+                 type="number"
+                 maxlength="6">
+        <i slot="left-icon"
+           class="iconfont iconyanzhengma"></i>
         <template #button>
-          <van-count-down :time="1000 * 60" format="ss s" v-if="isCountDown" @finish="isCountDown = false" />
-          <van-button @click="onSendSms" round class="send-sms-btn" size="small" type="default" native-type="button" v-else>获取验证码</van-button>
+          <van-count-down :time="1000 * 60"
+                          format="ss s"
+                          v-if="isCountDown"
+                          @finish="isCountDown = false" />
+          <van-button @click="onSendSms"
+                      round
+                      class="send-sms-btn"
+                      size="small"
+                      type="default"
+                      native-type="button"
+                      v-else>获取验证码</van-button>
         </template>
       </van-field>
       <div class="login-btn-warp">
-        <van-button class="login-btn" round block type="info" native-type="submit">
+        <van-button class="login-btn"
+                    round
+                    block
+                    type="info"
+                    native-type="submit">
           登录
         </van-button>
       </div>

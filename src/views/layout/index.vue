@@ -5,21 +5,26 @@ import { mapState } from 'vuex';
     <router-view />
     <!-- 标签导航栏 -->
     <!-- route: 开启路由模式-->
-    <van-tabbar class="layout-tabbar" route>
+    <van-tabbar class="layout-tabbar"
+                route>
       <van-tabbar-item to="/home">
-        <i slot="icon" class="iconfont iconshouye"></i>
+        <i slot="icon"
+           class="iconfont iconshouye"></i>
         <span class="text">首页</span>
       </van-tabbar-item>
       <van-tabbar-item to="/qa">
-        <i slot="icon" class="iconfont iconwenda"></i>
+        <i slot="icon"
+           class="iconfont iconwenda"></i>
         <span class="text">问答</span>
       </van-tabbar-item>
       <van-tabbar-item to="/video">
-        <i slot="icon" class="iconfont iconshipin"></i>
+        <i slot="icon"
+           class="iconfont iconshipin"></i>
         <span class="text">视频</span>
       </van-tabbar-item>
       <van-tabbar-item to="/my">
-        <i slot="icon" class="iconfont iconwode"></i>
+        <i slot="icon"
+           class="iconfont iconwode"></i>
         <span class="text">{{user ? '我的' : '未登录'}}</span>
       </van-tabbar-item>
     </van-tabbar>
