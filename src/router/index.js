@@ -23,7 +23,8 @@ const routes = [
     component: () => import('@/views/article'),
     // 向该（article）组件传参  把动态的 :articleId 传过去  接收拿props接收
     props: true
-  }
+  },
+  { path: '/user/profile', component: () => import('@/views/user-profile') }
 
 ]
 

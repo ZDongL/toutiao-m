@@ -7,9 +7,6 @@
         <van-icon name="arrow-left"
                   @click="$router.back()" />
       </div>
-      <div slot="right">
-        <van-icon name="ellipsis" />
-      </div>
     </van-nav-bar>
 
     <!-- 加载中 -->
@@ -84,7 +81,6 @@
         <van-icon name="comment-o"
                   :badge="totalCommentCount"
                   color="#777" />
-
         <!-- 使用 v-model向子组件传参，  子
       组件接收用props接收, 接收数据名默认为value  默认事件为input -->
         <collect-article v-model="article.is_collected"
@@ -255,10 +251,6 @@ export default {
   .van-icon-arrow-left {
     padding-top: 10px;
     font-size: 40px;
-  }
-  ::v-deep .van-icon-ellipsis {
-    padding-top: 10px;
-    font-size: 48px;
   }
   .article-detail {
     .article-title {

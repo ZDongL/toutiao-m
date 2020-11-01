@@ -57,3 +57,29 @@ export const deleteFollow = (target) => {
     url: `/app/v1_0/user/followings/${target}`
   })
 }
+
+// 获取当前登录用户的个人资料
+export const getUserProfile = () => {
+  return request({
+    method: 'get',
+    url: '/app/v1_0/user/profile'
+  })
+}
+
+// 修改当前登录用户的资料
+export const updataUserProfile = (data) => {
+  return request({
+    method: 'PATCH',
+    url: '/app/v1_0/user/profile',
+    data
+  })
+}
+
+// 修改当前用户的头像
+export const updataUserPhoto = (data) => {
+  return request({
+    method: 'PATCH',
+    url: '/app/v1_0/user/photo',
+    data
+  })
+}
